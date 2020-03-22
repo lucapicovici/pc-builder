@@ -1,0 +1,32 @@
+<%- include("../../partials/header.ejs"); %>
+
+<div class="container">
+    <h1>Products page</h1>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Capacity</th>
+            <th scope="col">Frequency</th>
+            <th scope="col">Type</th>
+            <th scope="col">Price</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <% memoryItems.forEach(function(memory){ %>
+                <tr>
+                    <td><a href="/products/memory/<%= memory._id %>"><%= memory.brand %> <%= memory.name %></a></td>
+                    <td><%= memory.capacity %> MB</td>
+                    <td><%= memory.frequency %> MHz</td>
+                    <td><%= memory.type %></td>
+                    <td>$<%= memory.price %></td>
+                    <td><a class="btn btn-primary btn-sm" href="#">Add</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include("../../partials/footer.ejs"); %>

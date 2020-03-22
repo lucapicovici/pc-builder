@@ -1,0 +1,30 @@
+<%- include("../../partials/header.ejs"); %>
+
+<div class="container">
+    <h1>Products page</h1>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Memory</th>
+            <th scope="col">Memory Type</th>
+            <th scope="col">Price</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <% videoCardItems.forEach(function(videoCard){ %>
+                <tr>
+                    <td><a href="/products/video-card/<%= videoCard._id %>"><%= videoCard.brand %> <%= videoCard.name %></a></td>
+                    <td><%= videoCard.memory %> MB</td>
+                    <td><%= videoCard.memoryType %></td>
+                    <td>$<%= videoCard.price %></td>
+                    <td><a class="btn btn-primary btn-sm" href="#">Add</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include("../../partials/footer.ejs"); %>

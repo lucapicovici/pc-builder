@@ -1,0 +1,14 @@
+<%- include("../../partials/header.ejs"); %>
+
+<ul class="list-group">
+    <li class="list-group-item"><%= powerSupply.brand %></li>
+    <li class="list-group-item"><%= powerSupply.name %></li>
+    <li class="list-group-item"><%= powerSupply.rating %></li>
+    <li class="list-group-item"><%= powerSupply.fanSize %> mm</li>
+    <li class="list-group-item"><%= powerSupply.tdp %> W</li>
+    <li class="list-group-item">$<%= powerSupply.price %></li>
+</ul>
+
+<a class="btn btn-primary btn-sm" href="#">Add</a>
+
+<%- include("../../partials/footer.ejs"); %>

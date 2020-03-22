@@ -1,0 +1,19 @@
+<%- include("../../partials/header.ejs"); %>
+
+<ul class="list-group">
+    <li class="list-group-item"><%= motherboard.brand %></li>
+    <li class="list-group-item"><%= motherboard.name %></li>
+    <li class="list-group-item"><%= motherboard.form %></li>
+    <li class="list-group-item"><%= motherboard.socket %></li>
+    <li class="list-group-item"><%= motherboard.memorySlots %></li>
+    <li class="list-group-item"><%= motherboard.maxMemoryFrequency %> MHz</li>
+    <li class="list-group-item"><%= motherboard.memoryType %></li>
+    <li class="list-group-item"><%= motherboard.sliSupport %></li>
+    <li class="list-group-item"><%= motherboard.crossfireSupport %></li>
+    <li class="list-group-item"><%= motherboard.tdp %> W</li>
+    <li class="list-group-item">$<%= motherboard.price %></li>
+</ul>
+
+<a class="btn btn-primary btn-sm" href="#">Add</a>
+
+<%- include("../../partials/footer.ejs"); %>

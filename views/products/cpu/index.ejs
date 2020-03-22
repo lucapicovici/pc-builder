@@ -1,0 +1,32 @@
+<%- include("../../partials/header.ejs"); %>
+
+<div class="container">
+    <h1>Products page</h1>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Cores</th>
+            <th scope="col">Frequency</th>
+            <th scope="col">Socket</th>
+            <th scope="col">Price</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <% cpuItems.forEach(function(cpu){ %>
+                <tr>
+                    <td><a href="/products/cpu/<%= cpu._id %>"><%= cpu.brand %> <%= cpu.name %></a></td>
+                    <td><%= cpu.cores %></td>
+                    <td><%= cpu.frequency %> GHz</td>
+                    <td><%= cpu.socket %></td>
+                    <td>$<%= cpu.price %></td>
+                    <td><a class="btn btn-primary btn-sm" href="#">Add</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include("../../partials/footer.ejs"); %>

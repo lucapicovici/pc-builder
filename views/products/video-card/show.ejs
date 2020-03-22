@@ -1,0 +1,18 @@
+<%- include("../../partials/header.ejs"); %>
+
+<ul class="list-group">
+    <li class="list-group-item"><%= videoCard.brand %></li>
+    <li class="list-group-item"><%= videoCard.name %></li>
+    <li class="list-group-item"><%= videoCard.memory %> MB</li>
+    <li class="list-group-item"><%= videoCard.memoryType %></li>
+    <li class="list-group-item"><%= videoCard.coreFrequency %> MHz</li>
+    <li class="list-group-item"><%= videoCard.memoryFrequency %> MHz</li>
+    <li class="list-group-item"><%= videoCard.sli %></li>
+    <li class="list-group-item"><%= videoCard.crossfire %></li>
+    <li class="list-group-item"><%= videoCard.tdp %> W</li>
+    <li class="list-group-item">$<%= videoCard.price %></li>
+</ul>
+
+<a class="btn btn-primary btn-sm" href="#">Add</a>
+
+<%- include("../../partials/footer.ejs"); %>

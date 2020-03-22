@@ -1,0 +1,16 @@
+<%- include("../../partials/header.ejs"); %>
+
+<ul class="list-group">
+    <li class="list-group-item"><%= caseItem.brand %></li>
+    <li class="list-group-item"><%= caseItem.name %></li>
+    <li class="list-group-item"><%= caseItem.form %></li>
+    <li class="list-group-item"><%= caseItem.motherboardSupport %></li>
+    <li class="list-group-item"><%= caseItem.maxGpuLength %> mm</li>
+    <li class="list-group-item"><%= caseItem.maxCoolerHeight %> mm</li>
+    <li class="list-group-item"><%= caseItem.maxPsuLength %> mm</li>
+    <li class="list-group-item">$<%= caseItem.price %></li>
+</ul>
+
+<a class="btn btn-primary btn-sm" href="#">Add</a>
+
+<%- include("../../partials/footer.ejs"); %>

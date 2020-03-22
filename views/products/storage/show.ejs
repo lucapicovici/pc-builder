@@ -1,0 +1,17 @@
+<%- include("../../partials/header.ejs"); %>
+
+<ul class="list-group">
+    <li class="list-group-item"><%= storage.brand %></li>
+    <li class="list-group-item"><%= storage.name %></li>
+    <li class="list-group-item"><%= storage.type %></li>
+    <li class="list-group-item"><%= storage.capacity %> GB</li>
+    <li class="list-group-item"><%= storage.size %> mm</li>
+    <li class="list-group-item"><%= storage.cache %> MB</li>
+    <li class="list-group-item"><%= storage.spinSpeed %> rpm</li>
+    <li class="list-group-item"><%= storage.tdp %> W</li>
+    <li class="list-group-item">$<%= storage.price %></li>
+</ul>
+
+<a class="btn btn-primary btn-sm" href="#">Add</a>
+
+<%- include("../../partials/footer.ejs"); %>

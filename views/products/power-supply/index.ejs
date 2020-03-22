@@ -1,0 +1,30 @@
+<%- include("../../partials/header.ejs"); %>
+
+<div class="container">
+    <h1>Products page</h1>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Fan Size</th>
+            <th scope="col">Price</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <% psuItems.forEach(function(psu){ %>
+                <tr>
+                    <td><a href="/products/power-supply/<%= psu._id %>"><%= psu.brand %> <%= psu.name %></a></td>
+                    <td><%= psu.rating %></td>
+                    <td><%= psu.fanSize %> mm</td>
+                    <td>$<%= psu.price %></td>
+                    <td><a class="btn btn-primary btn-sm" href="#">Add</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include("../../partials/footer.ejs"); %>

@@ -1,0 +1,16 @@
+<%- include("../../partials/header.ejs"); %>
+
+<ul class="list-group">
+    <li class="list-group-item"><%= cpu.brand %></li>
+    <li class="list-group-item"><%= cpu.name %></li>
+    <li class="list-group-item"><%= cpu.socket %></li>
+    <li class="list-group-item"><%= cpu.frequency %> GHz</li>
+    <li class="list-group-item"><%= cpu.cores %></li>
+    <li class="list-group-item"><%= cpu.cache %> MB</li>
+    <li class="list-group-item"><%= cpu.tdp %> W</li>
+    <li class="list-group-item">$<%= cpu.price %></li>
+</ul>
+
+<a class="btn btn-primary btn-sm" href="#">Add</a>
+
+<%- include("../../partials/footer.ejs"); %>

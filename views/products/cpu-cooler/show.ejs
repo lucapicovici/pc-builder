@@ -1,0 +1,14 @@
+<%- include("../../partials/header.ejs"); %>
+
+<ul class="list-group">
+    <li class="list-group-item"><%= cpuCooler.brand %></li>
+    <li class="list-group-item"><%= cpuCooler.name %></li>
+    <li class="list-group-item"><%= cpuCooler.type %></li>
+    <li class="list-group-item"><%= cpuCooler.fanSize %> mm</li>
+    <li class="list-group-item"><%= cpuCooler.tdp %> W</li>
+    <li class="list-group-item">$<%= cpuCooler.price %></li>
+</ul>
+
+<a class="btn btn-primary btn-sm" href="#">Add</a>
+
+<%- include("../../partials/footer.ejs"); %>

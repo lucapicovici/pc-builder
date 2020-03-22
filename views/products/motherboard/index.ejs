@@ -1,0 +1,32 @@
+<%- include("../../partials/header.ejs"); %>
+
+<div class="container">
+    <h1>Products page</h1>
+    
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Socket</th>
+            <th scope="col">Memory Slots</th>
+            <th scope="col">Max Memory Frequency</th>
+            <th scope="col">Price</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            <% motherboardItems.forEach(function(motherboard){ %>
+                <tr>
+                    <td><a href="/products/motherboard/<%= motherboard._id %>"><%= motherboard.brand %> <%= motherboard.name %></a></td>
+                    <td><%= motherboard.socket %></td>
+                    <td><%= motherboard.memorySlots %></td>
+                    <td><%= motherboard.maxMemoryFrequency %> MHz</td>
+                    <td>$<%= motherboard.price %></td>
+                    <td><a class="btn btn-primary btn-sm" href="#">Add</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+<%- include("../../partials/footer.ejs"); %>

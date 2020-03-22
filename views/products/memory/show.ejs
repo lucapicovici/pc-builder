@@ -1,0 +1,15 @@
+<%- include("../../partials/header.ejs"); %>
+
+<ul class="list-group">
+    <li class="list-group-item"><%= memory.brand %></li>
+    <li class="list-group-item"><%= memory.name %></li>
+    <li class="list-group-item"><%= memory.capacity %> MB</li>
+    <li class="list-group-item"><%= memory.frequency %> MHz</li>
+    <li class="list-group-item"><%= memory.type %></li>
+    <li class="list-group-item"><%= memory.tdp %> W</li>
+    <li class="list-group-item">$<%= memory.price %></li>
+</ul>
+
+<a class="btn btn-primary btn-sm" href="#">Add</a>
+
+<%- include("../../partials/footer.ejs"); %>
