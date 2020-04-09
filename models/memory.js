@@ -7,7 +7,7 @@ var memorySchema = new mongoose.Schema({
     frequency: {type: Number, required: true},
     type: {type: String, required: true},
     tdp: {type: Number, required: true},
-    price: {type: String, required: true}
+    price: {type: Number, required: true}
 });
 
 module.exports = mongoose.model("Memory", memorySchema);

@@ -24,7 +24,7 @@
                     <td><%= storage.cache %> MB</td>
                     <td><%= storage.spinSpeed %> rpm</td>
                     <td>$<%= storage.price %></td>
-                    <td><a class="btn btn-primary btn-sm" href="#">Add</a></td>
+                    <td><a class="btn btn-primary btn-sm" href="/products/add-to-cart/storage/<%= storage._id %>">Add</a></td>
                 </tr>
             <% }); %>
         </tbody>

@@ -20,7 +20,7 @@
                     <td><%= videoCard.memory %> MB</td>
                     <td><%= videoCard.memoryType %></td>
                     <td>$<%= videoCard.price %></td>
-                    <td><a class="btn btn-primary btn-sm" href="#">Add</a></td>
+                    <td><a class="btn btn-primary btn-sm" href="/products/add-to-cart/video-card/<%= videoCard._id %>">Add</a></td>
                 </tr>
             <% }); %>
         </tbody>

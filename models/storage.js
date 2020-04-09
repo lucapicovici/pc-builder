@@ -9,7 +9,7 @@ var storageSchema = new mongoose.Schema({
     cache: {type: Number, required: true},
     spinSpeed: {type: Number, required: true},
     tdp: {type: Number, required: true},
-    price: {type: String, required: true}
+    price: {type: Number, required: true}
 });
 
 module.exports = mongoose.model("Storage", storageSchema);

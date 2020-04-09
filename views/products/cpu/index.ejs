@@ -22,7 +22,7 @@
                     <td><%= cpu.frequency %> GHz</td>
                     <td><%= cpu.socket %></td>
                     <td>$<%= cpu.price %></td>
-                    <td><a class="btn btn-primary btn-sm" href="#">Add</a></td>
+                    <td><a class="btn btn-primary btn-sm" href="/products/add-to-cart/cpu/<%= cpu._id %>">Add</a></td>
                 </tr>
             <% }); %>
         </tbody>

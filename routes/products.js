@@ -9,7 +9,8 @@ var Cpu = require("../models/cpu.js"),
     VideoCard = require("../models/video-card.js"),
     Storage = require("../models/storage.js"),
     Case = require("../models/case.js"),
-    PowerSupply = require("../models/power-supply.js");
+    PowerSupply = require("../models/power-supply.js"),
+    Cart    = require("../models/cart.js");
 
 router.get("/", function(req, res){
     res.send("Products page.");
@@ -181,6 +182,107 @@ router.get("/power-supply/:id", function(req, res){
             res.render("products/power-supply/show", {powerSupply: powerSupply});
         }
     });
+});
+
+router.get("/add-to-cart/:type/:id", function(req, res){
+    var type = req.params.type;
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart);
+
+    console.log(req.session);
+    switch(type) {
+        case 'cpu':
+            Cpu.findById(productId, function(err, product){
+                if (err) {
+                    console.log(err);
+                }
+                cart.add(type, product._id, product);
+                req.session.cart = cart;
+                console.log(req.session);
+                res.redirect("/");
+            });
+            break;
+        case 'cpu-cooler':
+            CpuCooler.findById(productId, function(err, product){
+                if (err) {
+                    console.log(err);
+                }
+                cart.add(type, product._id, product);
+                req.session.cart = cart;
+                console.log(req.session);
+                res.redirect("/");
+            });
+            break;
+        case 'motherboard':
+            Motherboard.findById(productId, function(err, product){
+                if (err) {
+                    console.log(err);
+                }
+                cart.add(type, product._id, product);
+                req.session.cart = cart;
+                console.log(req.session);
+                res.redirect("/");
+            });
+            break;
+        case 'memory':
+            Memory.findById(productId, function(err, product){
+                if (err) {
+                    console.log(err);
+                }
+                cart.add(type, product._id, product);
+                req.session.cart = cart;
+                console.log(req.session);
+                res.redirect("/");
+            });
+            break;
+        case 'video-card':
+            VideoCard.findById(productId, function(err, product){
+                if (err) {
+                    console.log(err);
+                }
+                cart.add(type, product._id, product);
+                req.session.cart = cart;
+                console.log(req.session);
+                res.redirect("/");
+            });
+            break;
+        case 'storage':
+            Storage.findById(productId, function(err, product){
+                if (err) {
+                    console.log(err);
+                }
+                cart.add(type, product._id, product);
+                req.session.cart = cart;
+                console.log(req.session);
+                res.redirect("/");
+            });
+            break;
+        case 'case':
+            Case.findById(productId, function(err, product){
+                if (err) {
+                    console.log(err);
+                }
+                cart.add(type, product._id, product);
+                req.session.cart = cart;
+                console.log(req.session);
+                res.redirect("/");
+            });
+            break;
+        case 'power-supply':
+            PowerSupply.findById(productId, function(err, product){
+                if (err) {
+                    console.log(err);
+                }
+                cart.add(type, product._id, product);
+                req.session.cart = cart;
+                console.log(req.session);
+                res.redirect("/");
+            });
+            break;
+        default:
+            console.log("Component not found.");
+            return res.redirect("/");
+    }
 });
 
 module.exports = router;

@@ -10,7 +10,7 @@ var gpuSchema = new mongoose.Schema({
     sli: {type: Number, required: true},
     crossfire: {type: Number, required: true},
     tdp: {type: Number, required: true},
-    price: {type: String, required: true}
+    price: {type: Number, required: true}
 });
 
 module.exports = mongoose.model("VideoCard", gpuSchema);

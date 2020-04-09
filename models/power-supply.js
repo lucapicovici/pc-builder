@@ -6,7 +6,7 @@ var powerSupplySchema = new mongoose.Schema({
     rating: {type: String, required: true},
     fanSize: {type: Number, required: true},
     tdp: {type: Number, required: true},
-    price: {type: String, required: true}
+    price: {type: Number, required: true}
 });
 
 module.exports = mongoose.model("PowerSupply", powerSupplySchema);

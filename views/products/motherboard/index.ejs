@@ -22,7 +22,7 @@
                     <td><%= motherboard.memorySlots %></td>
                     <td><%= motherboard.maxMemoryFrequency %> MHz</td>
                     <td>$<%= motherboard.price %></td>
-                    <td><a class="btn btn-primary btn-sm" href="#">Add</a></td>
+                    <td><a class="btn btn-primary btn-sm" href="/products/add-to-cart/motherboard/<%= motherboard._id %>">Add</a></td>
                 </tr>
             <% }); %>
         </tbody>

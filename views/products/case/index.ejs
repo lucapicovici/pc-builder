@@ -20,7 +20,7 @@
                     <td><%= caseItem.form %></td>
                     <td><%= caseItem.motherboardSupport %></td>
                     <td>$<%= caseItem.price %></td>
-                    <td><a class="btn btn-primary btn-sm" href="#">Add</a></td>
+                    <td><a class="btn btn-primary btn-sm" href="/products/add-to-cart/case/<%= caseItem._id %>">Add</a></td>
                 </tr>
             <% }); %>
         </tbody>
