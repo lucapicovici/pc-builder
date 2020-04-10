@@ -1,19 +1,10 @@
 module.exports = function Cart(oldCart) {
-    this.items = oldCart.items || {
-        Cpu: {},
-        CpuCooler: {},
-        Motherboard: {},
-        Memory: {},
-        VideoCard: {},
-        Storage: {},
-        Case: {},
-        PowerSupply: {}
-    };
+    this.items = oldCart.items || {};
     this.totalPrice = oldCart.totalPrice || 0;
 
     this.add = function(type, id, item) {
         // console.log(this.items);
-        console.log(this.totalPrice);
+        // console.log(this.totalPrice);
         // console.log(id);
         // console.log(item);
         // console.log(typeof this.items[type]);
@@ -29,8 +20,10 @@ module.exports = function Cart(oldCart) {
     }
 
     this.remove = function(type) {
-        this.totalPrice -= this.items[type].item.price;
-        this.items[type] = {};
+        if (this.items[type]) {
+            this.totalPrice -= this.items[type].item.price;
+            delete this.items[type];
+        }
     }
 }
 

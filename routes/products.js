@@ -199,7 +199,7 @@ router.get("/add-to-cart/:type/:id", function(req, res){
                 cart.add(type, product._id, product);
                 req.session.cart = cart;
                 console.log(req.session);
-                res.redirect("/");
+                res.redirect("/build");
             });
             break;
         case 'cpu-cooler':
@@ -210,7 +210,7 @@ router.get("/add-to-cart/:type/:id", function(req, res){
                 cart.add(type, product._id, product);
                 req.session.cart = cart;
                 console.log(req.session);
-                res.redirect("/");
+                res.redirect("/build");
             });
             break;
         case 'motherboard':
@@ -221,7 +221,7 @@ router.get("/add-to-cart/:type/:id", function(req, res){
                 cart.add(type, product._id, product);
                 req.session.cart = cart;
                 console.log(req.session);
-                res.redirect("/");
+                res.redirect("/build");
             });
             break;
         case 'memory':
@@ -232,7 +232,7 @@ router.get("/add-to-cart/:type/:id", function(req, res){
                 cart.add(type, product._id, product);
                 req.session.cart = cart;
                 console.log(req.session);
-                res.redirect("/");
+                res.redirect("/build");
             });
             break;
         case 'video-card':
@@ -243,7 +243,7 @@ router.get("/add-to-cart/:type/:id", function(req, res){
                 cart.add(type, product._id, product);
                 req.session.cart = cart;
                 console.log(req.session);
-                res.redirect("/");
+                res.redirect("/build");
             });
             break;
         case 'storage':
@@ -254,7 +254,7 @@ router.get("/add-to-cart/:type/:id", function(req, res){
                 cart.add(type, product._id, product);
                 req.session.cart = cart;
                 console.log(req.session);
-                res.redirect("/");
+                res.redirect("/build");
             });
             break;
         case 'case':
@@ -265,7 +265,7 @@ router.get("/add-to-cart/:type/:id", function(req, res){
                 cart.add(type, product._id, product);
                 req.session.cart = cart;
                 console.log(req.session);
-                res.redirect("/");
+                res.redirect("/build");
             });
             break;
         case 'power-supply':
@@ -276,13 +276,22 @@ router.get("/add-to-cart/:type/:id", function(req, res){
                 cart.add(type, product._id, product);
                 req.session.cart = cart;
                 console.log(req.session);
-                res.redirect("/");
+                res.redirect("/build");
             });
             break;
         default:
             console.log("Component not found.");
-            return res.redirect("/");
+            return res.redirect("/build");
     }
+});
+
+router.get("/remove/:type", function(req, res){
+    var type = req.params.type;
+    var cart = new Cart(req.session.cart);
+    cart.remove(type);
+    req.session.cart = cart;
+    console.log(req.session);
+    res.redirect("/build");
 });
 
 module.exports = router;

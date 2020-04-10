@@ -6,7 +6,7 @@ router.get("/", function(req, res){
 });
 
 router.get("/build", function(req, res){
-    res.render("build");
+    res.render("build", {cart: req.session.cart});
 });
 
 module.exports = router;
