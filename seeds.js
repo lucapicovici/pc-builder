@@ -11,52 +11,112 @@ var mongoose = require("mongoose"),
 var cpuData = [
     {
         brand: "Intel",
-        name: "Core i7 7700HQ",
-        socket: "FCBGA1440",
-        frequency: 2.8,
-        cores: 4,
-        cache: 6,
-        tdp: 45,
-        price: 300
+        name: "Pentium G870",
+        socket: "1155",
+        frequency: 3.1,
+        cores: 2,
+        cache: 3,
+        tdp: 65,
+        price: 82
     },
     {
         brand: "Intel",
-        name: "Core i7 7700HQ",
-        socket: "FCBGA1440",
-        frequency: 2.8,
+        name: "Core i5-3570K",
+        socket: "1155",
+        frequency: 3.4,
         cores: 4,
         cache: 6,
-        tdp: 45,
-        price: 300
+        tdp: 77,
+        price: 235
     },
     {
         brand: "Intel",
-        name: "Core i7 7700HQ",
-        socket: "FCBGA1440",
-        frequency: 2.8,
-        cores: 4,
-        cache: 6,
-        tdp: 45,
-        price: 300
+        name: "Core i5-9600K",
+        socket: "1151",
+        frequency: 3.6,
+        cores: 6,
+        cache: 9,
+        tdp: 95,
+        price: 249
+    },
+    {
+        brand: "Intel",
+        name: "Core i7-8700",
+        socket: "1151",
+        frequency: 3.2,
+        cores: 6,
+        cache: 12,
+        tdp: 65,
+        price: 303
+    },
+    {
+        brand: "Intel",
+        name: "Core i9-9980XE",
+        socket: "2066",
+        frequency: 3,
+        cores: 18,
+        cache: 24.75,
+        tdp: 165,
+        price: 1979
+    },
+    {
+        brand: "AMD",
+        name: "Ryzen 5 2600X",
+        socket: "AM4",
+        frequency: 3.6,
+        cores: 6,
+        cache: 16,
+        tdp: 95,
+        price: 229
+    },
+    {
+        brand: "AMD",
+        name: "Ryzen 5 3600X",
+        socket: "AM4",
+        frequency: 3.8,
+        cores: 6,
+        cache: 32,
+        tdp: 95,
+        price: 249
+    },
+    {
+        brand: "AMD",
+        name: "Ryzen 7 3700X",
+        socket: "AM4",
+        frequency: 3.6,
+        cores: 8,
+        cache: 32,
+        tdp: 65,
+        price: 329
+    },
+    {
+        brand: "AMD",
+        name: "Ryzen 9 3950X",
+        socket: "AM4",
+        frequency: 3.5,
+        cores: 16,
+        cache: 16,
+        tdp: 105,
+        price: 749
     }
 ];
 
 var cpuCoolerData = [
     {
-        brand: "Noctua",
-        name: "Model #1",
-        type: "Cooler Type",
-        fanSize: 20,
+        brand: "Arctic",
+        name: "Freezer 50 TR",
+        type: "Air",
+        fanSize: 120,
         tdp: 5,
-        price: 109
+        price: 70
     },
     {
-        brand: "Noctua",
-        name: "Model #2",
-        type: "Cooler Type",
-        fanSize: 25,
+        brand: "Cooler Master",
+        name: "MasterLiquid ML240R",
+        type: "Liquid",
+        fanSize: 240,
         tdp: 10,
-        price: 139
+        price: 119
     }
 ];
 
@@ -96,30 +156,39 @@ var caseData = [
 var memoryData = [
     {
         brand: "Corsair",
-        name: "Name #1",
-        capacity: 4096,
+        name: "Vengeance LPX",
+        capacity: 16384,
+        frequency: 3200,
+        type: "DDR4",
+        tdp: 5,
+        price: 109
+    },
+    {
+        brand: "HyperX",
+        name: "Fury",    
+        capacity: 8192,
+        frequency: 2400,
+        type: "DDR4",
+        tdp: 5,
+        price: 59
+    },
+    {
+        brand: "HyperX",
+        name: "Fury RGB",
+        capacity: 16384,
+        frequency: 3200,
+        type: "DDR4",
+        tdp: 5,
+        price: 169
+    },
+    {
+        brand: "HyperX",
+        name: "Fury",
+        capacity: 8192,
         frequency: 1866,
         type: "DDR3",
         tdp: 5,
-        price: 99
-    },
-    {
-        brand: "Corsair",
-        name: "Name #2",
-        capacity: 8192,
-        frequency: 2133,
-        type: "DDR3",
-        tdp: 5,
-        price: 229
-    },
-    {
-        brand: "Corsair",
-        name: "Name #3",
-        capacity: 4096,
-        frequency: 2133,
-        type: "DDR3",
-        tdp: 5,
-        price: 159
+        price: 49
     }
 ];
 
@@ -138,30 +207,30 @@ var motherboardData = [
         price: 80
     },
     {
-        brand: "ASRock",
-        name: "H77 Pro4-M",
-        form: "miniATX",
-        socket: "1155",
+        brand: "Gigabyte",
+        name: "B450 Gaming X",
+        form: "ATX",
+        socket: "AM4",
         memorySlots: 4,
-        maxMemoryFrequency: 1600,
-        memoryType: "DDR3",
+        maxMemoryFrequency: 3600,
+        memoryType: "DDR4",
         sliSupport: 2,
         crossfireSupport: 2,
         tdp: 50,
-        price: 80
+        price: 119
     },
     {
-        brand: "ASRock",
-        name: "H77 Pro4-M",
-        form: "miniATX",
-        socket: "1155",
+        brand: "Asus",
+        name: "STRIX Z270H GAMING",
+        form: "ATX",
+        socket: "1151",
         memorySlots: 4,
-        maxMemoryFrequency: 1600,
-        memoryType: "DDR3",
+        maxMemoryFrequency: 3866,
+        memoryType: "DDR4",
         sliSupport: 2,
         crossfireSupport: 2,
         tdp: 50,
-        price: 80
+        price: 300
     }
 ];
 
@@ -180,15 +249,39 @@ var gpuData = [
     },
     {
         brand: "Nvidia",
-        name: "GTX 690 4-Way SLI",
-        memory: 16384,
+        name: "GTX 690 2-Way SLI",
+        memory: 8192,
         memoryType: "GDDR5",
         coreFrequency: 915,
         memoryFrequency: 1500,
-        sli: 4,
+        sli: 2,
         crossfire: 0,
-        tdp: 1200,
-        price: 3999
+        tdp: 600,
+        price: 1999
+    },
+    {
+        brand: "AMD",
+        name: "Radeon RX 5700 XT",
+        memory: 8192,
+        memoryType: "GDDR6",
+        coreFrequency: 1770,
+        memoryFrequency: 14000,
+        sli: 0,
+        crossfire: 0,
+        tdp: 200,
+        price: 599
+    },
+    {
+        brand: "Nvidia",
+        name: "RTX 2080 Ti GAMING X TRIO",
+        memory: 11000,
+        memoryType: "GDDR6",
+        coreFrequency: 1350,
+        memoryFrequency: 14000,
+        sli: 0,
+        crossfire: 0,
+        tdp: 250,
+        price: 1500
     }
 ];
 
