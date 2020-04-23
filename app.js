@@ -35,8 +35,8 @@ app.use(function(req, res, next){
     next();
 });
 
-app.use("/", indexRoutes);
 app.use("/products", productRoutes);
+app.use("/", indexRoutes);
 
 mongoose.set("useUnifiedTopology", true);
 mongoose.set("useNewUrlParser", true);
