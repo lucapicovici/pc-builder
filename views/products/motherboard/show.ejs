@@ -6,6 +6,7 @@
     <li class="list-group-item"><%= motherboard.form %></li>
     <li class="list-group-item"><%= motherboard.socket %></li>
     <li class="list-group-item"><%= motherboard.memorySlots %></li>
+    <li class="list-group-item"><%= motherboard.maxMemory %> GB</li>
     <li class="list-group-item"><%= motherboard.maxMemoryFrequency %> MHz</li>
     <li class="list-group-item"><%= motherboard.memoryType %></li>
     <li class="list-group-item"><%= motherboard.sliSupport %></li>
@@ -14,6 +15,6 @@
     <li class="list-group-item">$<%= motherboard.price %></li>
 </ul>
 
-<a class="btn btn-primary btn-sm" href="#">Add</a>
+<a class="btn btn-primary btn-sm" href="/products/add-to-cart/motherboard/<%= motherboard._id %>">Add</a>
 
 <%- include("../../partials/footer.ejs"); %>

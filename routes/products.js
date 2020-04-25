@@ -17,7 +17,23 @@ router.get("/", function(req, res){
 });
 
 router.get("/cpu", function(req, res){
-    Cpu.find({}, function(err, cpuItems){
+    var cart = req.session.cart.items;
+    var filter = req.query.filter;
+    var query = {};
+    var totalTdp = req.session.cart.totalTdp;
+
+    if (cart.motherboard) query.socket = cart.motherboard.item.socket;
+    if (cart["power-supply"]) {
+        query["$expr"] = {
+            $lte: [
+                {$add: ["$tdp", totalTdp]},
+                cart["power-supply"].item.tdp
+            ]
+        }
+    }
+    if (filter === "all") query = {};
+
+    Cpu.find(query, function(err, cpuItems){
         if (err) {
             console.log(err);
         } else {
@@ -38,7 +54,22 @@ router.get("/cpu/:id", function(req, res){
 });
 
 router.get("/cpu-cooler", function(req, res){
-    CpuCooler.find({}, function(err, cpuCoolerItems){
+    var cart = req.session.cart.items;
+    var filter = req.query.filter;
+    var query = {};
+    var totalTdp = req.session.cart.totalTdp;
+
+    if (cart["power-supply"]) {
+        query["$expr"] = {
+            $lte: [
+                {$add: ["$tdp", totalTdp]},
+                cart["power-supply"].item.tdp
+            ]
+        }
+    }
+    if (filter === "all") query = {};
+
+    CpuCooler.find(query, function(err, cpuCoolerItems){
         if (err) {
             console.log(err);
         } else {
@@ -59,7 +90,65 @@ router.get("/cpu-cooler/:id", function(req, res){
 });
 
 router.get("/motherboard", function(req, res){
-    Motherboard.find({}, function(err, motherboardItems){
+    var cart = req.session.cart.items;
+    var filter = req.query.filter;
+    var query = {};
+    var totalTdp = req.session.cart.totalTdp;
+
+    if (cart.cpu) query.socket = cart.cpu.item.socket;
+    if (cart.memory) {
+        query.maxMemory = {$gte: cart.memory.item.capacity};
+        query.maxMemoryFrequency = {$gte: cart.memory.item.frequency};
+        query.memoryType = cart.memory.item.type;
+    }
+    if (cart["power-supply"]) {
+        query["$expr"] = {
+            $and: [
+                {
+                    $lte: [
+                        {$add: ["$tdp", totalTdp]},
+                        cart["power-supply"].item.tdp
+                    ]
+                }
+            ]
+        }
+        if (cart["video-card"]) {
+            query["$expr"]["$and"].push(
+                {
+                    $gte: [
+                        "$sliSupport",
+                        cart["video-card"].item.sli
+                    ]
+                },
+                {
+                    $gte: [
+                        "$crossfireSupport",
+                        cart["video-card"].item.crossfire
+                    ]
+                }
+            )
+        }
+    } else if (cart["video-card"]) {
+        query["$expr"] = {
+            $and: [
+                {
+                    $gte: [
+                        "$sliSupport",
+                        cart["video-card"].item.sli
+                    ]
+                },
+                {
+                    $gte: [
+                        "$crossfireSupport",
+                        cart["video-card"].item.crossfire
+                    ]
+                }
+            ]
+        }
+    }
+    if (filter === "all") query = {};
+
+    Motherboard.find(query, function(err, motherboardItems){
         if (err) {
             console.log(err);
         } else {
@@ -80,7 +169,27 @@ router.get("/motherboard/:id", function(req, res){
 });
 
 router.get("/memory", function(req, res){
-    Memory.find({}, function(err, memoryItems){
+    var cart = req.session.cart.items;
+    var filter = req.query.filter;
+    var query = {};
+    var totalTdp = req.session.cart.totalTdp;
+
+    if (cart.motherboard) {
+        query.capacity = {$lte: cart.motherboard.item.maxMemory};
+        query.frequency = {$lte: cart.motherboard.item.maxMemoryFrequency};
+        query.type = cart.motherboard.item.memoryType;
+    }
+    if (cart["power-supply"]) {
+        query["$expr"] = {
+            $lte: [
+                {$add: ["$tdp", totalTdp]},
+                cart["power-supply"].item.tdp
+            ]
+        }
+    }
+    if (filter === "all") query = {};
+
+    Memory.find(query, function(err, memoryItems){
         if (err) {
             console.log(err);
         } else {
@@ -101,7 +210,60 @@ router.get("/memory/:id", function(req, res){
 });
 
 router.get("/video-card", function(req, res){
-    VideoCard.find({}, function(err, videoCardItems){
+    var cart = req.session.cart.items;
+    var filter = req.query.filter;
+    var query = {};
+    var totalTdp = req.session.cart.totalTdp;
+
+    if (cart["power-supply"]) {
+        query["$expr"] = {
+            $and: [
+                {
+                    $lte: [
+                        {$add: ["$tdp", totalTdp]},
+                        cart["power-supply"].item.tdp
+                    ]
+                }
+            ]
+        }
+        if (cart.motherboard) {
+            query["$expr"]["$and"].push(
+                {
+                    $lte: [
+                        "$sli",
+                        cart.motherboard.item.sliSupport
+                    ]
+                },
+                {
+                    $lte: [
+                        "$crossfire",
+                        cart.motherboard.item.crossfireSupport
+                    ]
+                }
+            )
+        }
+    }
+    else if (cart.motherboard) {
+        query["$expr"] = {
+            $and: [
+                {
+                    $lte: [
+                        "$sli",
+                        cart.motherboard.item.sliSupport
+                    ]
+                },
+                {
+                    $lte: [
+                        "$crossfire",
+                        cart.motherboard.item.crossfireSupport
+                    ]
+                }
+            ]
+        }
+    }
+    if (filter === "all") query = {};
+
+    VideoCard.find(query, function(err, videoCardItems){
         if (err) {
             console.log(err);
         } else {
@@ -122,7 +284,22 @@ router.get("/video-card/:id", function(req, res){
 });
 
 router.get("/storage", function(req, res){
-    Storage.find({}, function(err, storageItems){
+    var cart = req.session.cart.items;
+    var filter = req.query.filter;
+    var query = {};
+    var totalTdp = req.session.cart.totalTdp;
+
+    if (cart["power-supply"]) {
+        query["$expr"] = {
+            $lte: [
+                {$add: ["$tdp", totalTdp]},
+                cart["power-supply"].item.tdp
+            ]
+        }
+    }
+    if (filter === "all") query = {};
+
+    Storage.find(query, function(err, storageItems){
         if (err) {
             console.log(err);
         } else {
@@ -164,7 +341,14 @@ router.get("/case/:id", function(req, res){
 });
 
 router.get("/power-supply", function(req, res){
-    PowerSupply.find({}, function(err, psuItems){
+    var filter = req.query.filter;
+    var query = {};
+    var totalTdp = req.session.cart.totalTdp;
+
+    if (filter === "all") totalTdp = 0;
+    query = {"tdp": {$gte: totalTdp}};
+
+    PowerSupply.find(query, function(err, psuItems){
         if (err) {
             console.log(err);
         } else {

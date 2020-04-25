@@ -50,16 +50,6 @@ var cpuData = [
         price: 303
     },
     {
-        brand: "Intel",
-        name: "Core i9-9980XE",
-        socket: "2066",
-        frequency: 3,
-        cores: 18,
-        cache: 24.75,
-        tdp: 165,
-        price: 1979
-    },
-    {
         brand: "AMD",
         name: "Ryzen 5 2600X",
         socket: "AM4",
@@ -157,7 +147,7 @@ var memoryData = [
     {
         brand: "Corsair",
         name: "Vengeance LPX",
-        capacity: 16384,
+        capacity: 16,
         frequency: 3200,
         type: "DDR4",
         tdp: 5,
@@ -166,7 +156,7 @@ var memoryData = [
     {
         brand: "HyperX",
         name: "Fury",    
-        capacity: 8192,
+        capacity: 8,
         frequency: 2400,
         type: "DDR4",
         tdp: 5,
@@ -175,7 +165,7 @@ var memoryData = [
     {
         brand: "HyperX",
         name: "Fury RGB",
-        capacity: 16384,
+        capacity: 16,
         frequency: 3200,
         type: "DDR4",
         tdp: 5,
@@ -184,11 +174,20 @@ var memoryData = [
     {
         brand: "HyperX",
         name: "Fury",
-        capacity: 8192,
+        capacity: 8,
         frequency: 1866,
         type: "DDR3",
         tdp: 5,
         price: 49
+    },
+    {
+        brand: "Corsair",
+        name: "Vengeance LP",
+        capacity: 8,
+        frequency: 1600,
+        type: "DDR3",
+        tdp: 5,
+        price: 55
     }
 ];
 
@@ -199,6 +198,7 @@ var motherboardData = [
         form: "miniATX",
         socket: "1155",
         memorySlots: 4,
+        maxMemory: 32,
         maxMemoryFrequency: 1600,
         memoryType: "DDR3",
         sliSupport: 2,
@@ -212,6 +212,7 @@ var motherboardData = [
         form: "ATX",
         socket: "AM4",
         memorySlots: 4,
+        maxMemory: 32,
         maxMemoryFrequency: 3600,
         memoryType: "DDR4",
         sliSupport: 2,
@@ -225,6 +226,7 @@ var motherboardData = [
         form: "ATX",
         socket: "1151",
         memorySlots: 4,
+        maxMemory: 64,
         maxMemoryFrequency: 3866,
         memoryType: "DDR4",
         sliSupport: 2,
@@ -260,6 +262,18 @@ var gpuData = [
         price: 1999
     },
     {
+        brand: "Nvidia",
+        name: "GTX 690 4-Way SLI",
+        memory: 16384,
+        memoryType: "GDDR5",
+        coreFrequency: 915,
+        memoryFrequency: 1500,
+        sli: 4,
+        crossfire: 0,
+        tdp: 1200,
+        price: 3999
+    },
+    {
         brand: "AMD",
         name: "Radeon RX 5700 XT",
         memory: 8192,
@@ -270,6 +284,30 @@ var gpuData = [
         crossfire: 0,
         tdp: 200,
         price: 599
+    },
+    {
+        brand: "AMD",
+        name: "Radeon RX 580 2-Way CrossFire",
+        memory: 8192,
+        memoryType: "GDDR5",
+        coreFrequency: 1257,
+        memoryFrequency: 2000,
+        sli: 0,
+        crossfire: 2,
+        tdp: 300,
+        price: 450
+    },
+    {
+        brand: "AMD",
+        name: "Radeon RX Vega 64 Air 2-Way Crossfire",
+        memory: 8192,
+        memoryType: "HBM-2",
+        coreFrequency: 1247,
+        memoryFrequency: 500,
+        sli: 0,
+        crossfire: 2,
+        tdp: 300,
+        price: 1400
     },
     {
         brand: "Nvidia",

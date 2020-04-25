@@ -6,9 +6,10 @@ var motherboardSchema = new mongoose.Schema({
     form: {type: String, required: true},
     socket: {type: String, required: true},
     memorySlots: {type: Number, required: true},
+    maxMemory: {type: Number, required: true},
     maxMemoryFrequency: {type: Number, required: true},
     memoryType: {type: String, required: true},
-    sliSupport: {type: Number, required: true},
+    sliSupport: {type: Number, required: true}, // 0, 2,3,4
     crossfireSupport: {type: Number, required: true},
     tdp: {type: Number, required: true},
     price: {type: Number, required: true}
