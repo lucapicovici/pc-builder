@@ -28,6 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(validator());
 app.use(flash());
+app.use(express.static(__dirname + "/public"));
 app.use(function(req, res, next){
     req.session.cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
     res.locals.user = req.user;
