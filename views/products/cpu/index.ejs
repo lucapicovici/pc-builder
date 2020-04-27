@@ -1,20 +1,22 @@
 <%- include("../../partials/header.ejs"); %>
 
-<div class="container">
-    <h1>Products page</h1>
-    
-    <table class="table">
-        <thead>
+<div class="cpuTitle">
+    <h1>Choose A CPU</h1>
+</div>
+
+<div class="cpuTable">
+    <table class="container table table-hover">
+        <thead class="cpuTableHead">
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Cores</th>
             <th scope="col">Frequency</th>
             <th scope="col">Socket</th>
             <th scope="col">Price</th>
-            <th scope="col"></th>
+            <th scope="col">&nbsp</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="cpuTableBody">
             <% cpuItems.forEach(function(cpu){ %>
                 <tr>
                     <td><a href="/products/cpu/<%= cpu._id %>"><%= cpu.brand %> <%= cpu.name %></a></td>

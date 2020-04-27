@@ -1,20 +1,22 @@
 <%- include("../../partials/header.ejs"); %>
 
-<div class="container">
-    <h1>Products page</h1>
-    
-    <table class="table">
-        <thead>
+<div class="mboardTitle">
+    <h1>Choose A Motherboard</h1>
+</div>
+
+<div class="mboardTable">
+    <table class="container table table-hover">
+        <thead class="mboardTableHead">
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Socket</th>
             <th scope="col">Memory Slots</th>
             <th scope="col">Max Memory Frequency</th>
             <th scope="col">Price</th>
-            <th scope="col"></th>
+            <th scope="col">&nbsp</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="mboardTableBody">
             <% motherboardItems.forEach(function(motherboard){ %>
                 <tr>
                     <td><a href="/products/motherboard/<%= motherboard._id %>"><%= motherboard.brand %> <%= motherboard.name %></a></td>

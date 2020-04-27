@@ -1,186 +1,190 @@
 <%- include("./partials/header.ejs"); %>
 
-<h1>Build Page.</h1>
+<div class="buildTitle">
+  <h1>Build Page</h1>
+</div>
 
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Component</th>
-        <th scope="col">Selection</th>
-        <th scope="col">Price</th>
-        <th scope="col">(Remove)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">CPU</th>
-        <% if (cart.items["cpu"]) { %>
-          <% var cpu = cart.items["cpu"].item; %>
-          <td>
-            <a href="/products/cpu/<%= cart.items['cpu'].id %>">
-              <%= cpu.brand + " " + cpu.name + " " + cpu.frequency + "GHz " + cpu.cores + "-Core Processor" %>
-            </a>
-          </td>
-          <td>
-            $<%= cpu.price %>
-          </td>
-          <td>
-            <a href="/products/remove/cpu">Remove</a>
-          </td>
-        <% } else { %>
-          <td colspan="11">
-            <a class="btn btn-primary btn-sm" href="/products/cpu">+ Add CPU</a>
-          </td>
-        <% } %>
-      </tr>
-      <tr>
-        <th scope="row">CPU Cooler</th>
-        <% if (cart.items["cpu-cooler"]) { %>
-          <% var cpuCooler = cart.items["cpu-cooler"].item; %>
-          <td>
-            <a href="/products/cpu-cooler/<%= cart.items['cpu-cooler'].id %>">
-              <%= cpuCooler.brand + " " + cpuCooler.name + " " + cpuCooler.type + " " + cpuCooler.fanSize + "mm CPU Cooler" %>
-            </a>
-          </td>
-          <td>
-            $<%= cpuCooler.price %>
-          </td>
-          <td>
-            <a href="/products/remove/cpu-cooler">Remove</a>
-          </td>
-        <% } else { %>
-          <td colspan="11">
-            <a class="btn btn-primary btn-sm" href="/products/cpu-cooler">+ Add CPU Cooler</a>
-          </td>
-        <% } %>
-      </tr>
-      <tr>
-        <th scope="row">Motherboard</th>
-        <% if (cart.items["motherboard"]) { %>
-          <% var motherboard = cart.items["motherboard"].item; %>
-          <td>
-            <a href="/products/motherboard/<%= cart.items['motherboard'].id %>">
-              <%= motherboard.brand + " " + motherboard.name + ", socket " +  motherboard.socket + " Motherboard" %>
-            </a>
-          </td>
-          <td>
-            $<%= motherboard.price %>
-          </td>
-          <td>
-            <a href="/products/remove/motherboard">Remove</a>
-          </td>
-        <% } else { %>
-          <td colspan="11">
-            <a class="btn btn-primary btn-sm" href="/products/motherboard">+ Add Motherboard</a>
-          </td>
-        <% } %>
-      </tr>
-      <tr>
-        <th scope="row">Memory</th>
-        <% if (cart.items["memory"]) { %>
-          <% var memory = cart.items["memory"].item; %>
-          <td>
-            <a href="/products/memory/<%= cart.items['memory'].id %>">
-              <%= memory.brand + " " + memory.name + " " + memory.capacity + "GB " + memory.type + " " + memory.frequency + "MHz Memory" %>
-            </a>
-          </td>
-          <td>
-            $<%= memory.price %>
-          </td>
-          <td>
-            <a href="/products/remove/memory">Remove</a>
-          </td>
-        <% } else { %>
-          <td colspan="11">
-            <a class="btn btn-primary btn-sm" href="/products/memory">+ Add Memory</a>
-          </td>
-        <% } %>
-      </tr>
-      <tr>
-        <th scope="row">Storage</th>
-        <% if (cart.items["storage"]) { %>
-          <% var storage = cart.items["storage"].item; %>
-          <td>
-            <a href="/products/storage/<%= cart.items['storage'].id %>">
-              <%= storage.brand + " " + storage.name + " " + storage.type + " " + storage.capacity + "GB Storage" %>
-            </a>
-          </td>
-          <td>
-            $<%= storage.price %>
-          </td>
-          <td>
-            <a href="/products/remove/storage">Remove</a>
-          </td>
-        <% } else { %>
-          <td colspan="11">
-            <a class="btn btn-primary btn-sm" href="/products/storage">+ Add Storage</a>
-          </td>
-        <% } %>
-      </tr>
-      <tr>
-        <th scope="row">Video Card</th>
-        <% if (cart.items["video-card"]) { %>
-          <% var videoCard = cart.items["video-card"].item; %>
-          <td>
-            <a href="/products/video-card/<%= cart.items['video-card'].id %>">
-              <%= videoCard.brand + " " + videoCard.name + " " + videoCard.memory + "MB " + videoCard.memoryType + " Video Card" %>
-            </a>
-          </td>
-          <td>
-            $<%= videoCard.price %>
-          </td>
-          <td>
-            <a href="/products/remove/video-card">Remove</a>
-          </td>
-        <% } else { %>
-          <td colspan="11">
-            <a class="btn btn-primary btn-sm" href="/products/video-card">+ Add Video Card</a>
-          </td>
-        <% } %>
-      </tr>
-      <tr>
-        <th scope="row">Case</th>
-        <% if (cart.items["case"]) { %>
-          <% var caseItem = cart.items["case"].item; %>
-          <td>
-            <a href="/products/case/<%= cart.items['case'].id %>">
-              <%= caseItem.brand + " " + caseItem.name + " " + caseItem.motherboardSupport + " Case" %>
-            </a>
-          </td>
-          <td>
-            $<%= caseItem.price %>
-          </td>
-          <td>
-            <a href="/products/remove/case">Remove</a>
-          </td>
-        <% } else { %>
-          <td colspan="11">
-            <a class="btn btn-primary btn-sm" href="/products/case">+ Add Case</a>
-          </td>
-        <% } %>
-      </tr>
-      <tr>
-        <th scope="row">Power Supply</th>
-        <% if (cart.items["power-supply"]) { %>
-          <% var psu = cart.items["power-supply"].item; %>
-          <td>
-            <a href="/products/power-supply/<%= cart.items['power-supply'].id %>">
-              <%= psu.brand + " " + psu.name + " " + psu.tdp + "W Power Supply" %>
-            </a>
-          </td>
-          <td>
-            $<%= psu.price %>
-          </td>
-          <td>
-            <a href="/products/remove/power-supply">Remove</a>
-          </td>
-        <% } else { %>
-          <td colspan="11">
-            <a class="btn btn-primary btn-sm" href="/products/power-supply">+ Add Power Supply</a>
-          </td>
-        <% } %>
-      </tr>
-    </tbody>
+<div class="buildTable">
+  <table class="container table table-hover">
+      <thead class="buildTableHead">
+        <tr>
+          <th scope="col">Component</th>
+          <th scope="col">Selection</th>
+          <th scope="col">Price</th>
+          <th scope="col">&nbsp</th>
+        </tr>
+      </thead>
+      <tbody class="buildTableBody">
+        <tr>
+          <th scope="row">CPU</th>
+          <% if (cart.items["cpu"]) { %>
+            <% var cpu = cart.items["cpu"].item; %>
+            <td>
+              <a href="/products/cpu/<%= cart.items['cpu'].id %>">
+                <%= cpu.brand + " " + cpu.name + " " + cpu.frequency + "GHz " + cpu.cores + "-Core Processor" %>
+              </a>
+            </td>
+            <td>
+              $<%= cpu.price %>
+            </td>
+            <td>
+              <a id="remove" href="/products/remove/cpu">Remove</a>
+            </td>
+          <% } else { %>
+            <td colspan="11">
+              <a class="btn btn-primary btn-sm" href="/products/cpu">+ Add CPU</a>
+            </td>
+          <% } %>
+        </tr>
+        <tr>
+          <th scope="row">CPU Cooler</th>
+          <% if (cart.items["cpu-cooler"]) { %>
+            <% var cpuCooler = cart.items["cpu-cooler"].item; %>
+            <td>
+              <a href="/products/cpu-cooler/<%= cart.items['cpu-cooler'].id %>">
+                <%= cpuCooler.brand + " " + cpuCooler.name + " " + cpuCooler.type + " " + cpuCooler.fanSize + "mm CPU Cooler" %>
+              </a>
+            </td>
+            <td>
+              $<%= cpuCooler.price %>
+            </td>
+            <td>
+              <a id="remove" href="/products/remove/cpu-cooler">Remove</a>
+            </td>
+          <% } else { %>
+            <td colspan="11">
+              <a class="btn btn-primary btn-sm" href="/products/cpu-cooler">+ Add CPU Cooler</a>
+            </td>
+          <% } %>
+        </tr>
+        <tr>
+          <th scope="row">Motherboard</th>
+          <% if (cart.items["motherboard"]) { %>
+            <% var motherboard = cart.items["motherboard"].item; %>
+            <td>
+              <a href="/products/motherboard/<%= cart.items['motherboard'].id %>">
+                <%= motherboard.brand + " " + motherboard.name + ", socket " +  motherboard.socket + " Motherboard" %>
+              </a>
+            </td>
+            <td>
+              $<%= motherboard.price %>
+            </td>
+            <td>
+              <a id="remove" href="/products/remove/motherboard">Remove</a>
+            </td>
+          <% } else { %>
+            <td colspan="11">
+              <a class="btn btn-primary btn-sm" href="/products/motherboard">+ Add Motherboard</a>
+            </td>
+          <% } %>
+        </tr>
+        <tr>
+          <th scope="row">Memory</th>
+          <% if (cart.items["memory"]) { %>
+            <% var memory = cart.items["memory"].item; %>
+            <td>
+              <a href="/products/memory/<%= cart.items['memory'].id %>">
+                <%= memory.brand + " " + memory.name + " " + memory.capacity + "GB " + memory.type + " " + memory.frequency + "MHz Memory" %>
+              </a>
+            </td>
+            <td>
+              $<%= memory.price %>
+            </td>
+            <td>
+              <a id="remove" href="/products/remove/memory">Remove</a>
+            </td>
+          <% } else { %>
+            <td colspan="11">
+              <a class="btn btn-primary btn-sm" href="/products/memory">+ Add Memory</a>
+            </td>
+          <% } %>
+        </tr>
+        <tr>
+          <th scope="row">Storage</th>
+          <% if (cart.items["storage"]) { %>
+            <% var storage = cart.items["storage"].item; %>
+            <td>
+              <a href="/products/storage/<%= cart.items['storage'].id %>">
+                <%= storage.brand + " " + storage.name + " " + storage.type + " " + storage.capacity + "GB Storage" %>
+              </a>
+            </td>
+            <td>
+              $<%= storage.price %>
+            </td>
+            <td>
+              <a id="remove" href="/products/remove/storage">Remove</a>
+            </td>
+          <% } else { %>
+            <td colspan="11">
+              <a class="btn btn-primary btn-sm" href="/products/storage">+ Add Storage</a>
+            </td>
+          <% } %>
+        </tr>
+        <tr>
+          <th scope="row">Video Card</th>
+          <% if (cart.items["video-card"]) { %>
+            <% var videoCard = cart.items["video-card"].item; %>
+            <td>
+              <a href="/products/video-card/<%= cart.items['video-card'].id %>">
+                <%= videoCard.brand + " " + videoCard.name + " " + videoCard.memory + "MB " + videoCard.memoryType + " Video Card" %>
+              </a>
+            </td>
+            <td>
+              $<%= videoCard.price %>
+            </td>
+            <td>
+              <a id="remove" href="/products/remove/video-card">Remove</a>
+            </td>
+          <% } else { %>
+            <td colspan="11">
+              <a class="btn btn-primary btn-sm" href="/products/video-card">+ Add Video Card</a>
+            </td>
+          <% } %>
+        </tr>
+        <tr>
+          <th scope="row">Case</th>
+          <% if (cart.items["case"]) { %>
+            <% var caseItem = cart.items["case"].item; %>
+            <td>
+              <a href="/products/case/<%= cart.items['case'].id %>">
+                <%= caseItem.brand + " " + caseItem.name + " " + caseItem.motherboardSupport + " Case" %>
+              </a>
+            </td>
+            <td>
+              $<%= caseItem.price %>
+            </td>
+            <td>
+              <a id="remove" href="/products/remove/case">Remove</a>
+            </td>
+          <% } else { %>
+            <td colspan="11">
+              <a class="btn btn-primary btn-sm" href="/products/case">+ Add Case</a>
+            </td>
+          <% } %>
+        </tr>
+        <tr>
+          <th scope="row">Power Supply</th>
+          <% if (cart.items["power-supply"]) { %>
+            <% var psu = cart.items["power-supply"].item; %>
+            <td>
+              <a href="/products/power-supply/<%= cart.items['power-supply'].id %>">
+                <%= psu.brand + " " + psu.name + " " + psu.tdp + "W Power Supply" %>
+              </a>
+            </td>
+            <td>
+              $<%= psu.price %>
+            </td>
+            <td>
+              <a id="remove" href="/products/remove/power-supply">Remove</a>
+            </td>
+          <% } else { %>
+            <td colspan="11">
+              <a class="btn btn-primary btn-sm" href="/products/power-supply">+ Add Power Supply</a>
+            </td>
+          <% } %>
+        </tr>
+      </tbody>
   </table>
+</div>
 
 <%- include("./partials/footer.ejs"); %>

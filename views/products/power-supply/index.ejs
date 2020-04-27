@@ -1,19 +1,21 @@
 <%- include("../../partials/header.ejs"); %>
 
-<div class="container">
-    <h1>Products page</h1>
-    
-    <table class="table">
-        <thead>
+<div class="powerSupplyTitle">
+    <h1>Choose A Power Supply</h1>
+</div>
+
+<div class="powerSupplyTable">    
+    <table class="container table table-hover">
+        <thead class="powerSupplyTableHead">
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Rating</th>
             <th scope="col">Power</th>
             <th scope="col">Price</th>
-            <th scope="col"></th>
+            <th scope="col">&nbsp</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="powerSupplyTableBody">
             <% psuItems.forEach(function(psu){ %>
                 <tr>
                     <td><a href="/products/power-supply/<%= psu._id %>"><%= psu.brand %> <%= psu.name %></a></td>

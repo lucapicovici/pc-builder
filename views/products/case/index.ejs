@@ -1,19 +1,21 @@
 <%- include("../../partials/header.ejs"); %>
 
-<div class="container">
-    <h1>Products page</h1>
-    
-    <table class="table">
-        <thead>
+<div class="caseTitle">
+    <h1>Choose A Case</h1>
+</div>
+
+<div class="caseTable">
+    <table class="container table table-hover">
+        <thead class="caseTableHead">
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Form</th>
             <th scope="col">Motherboard Support</th>
             <th scope="col">Price</th>
-            <th scope="col"></th>
+            <th scope="col">&nbsp</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="caseTableBody">
             <% caseItems.forEach(function(caseItem){ %>
                 <tr>
                     <td><a href="/products/case/<%= caseItem._id %>"><%= caseItem.brand %> <%= caseItem.name %></a></td>

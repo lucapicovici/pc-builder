@@ -1,0 +1,249 @@
+ /* DEFAULT*/
+
+main {
+	height: 900px;
+}
+
+
+/* ALL PAGES*/
+
+#remove:hover {  /* for button Delete*/
+  color: red;
+  text-decoration: none;
+}
+
+
+/* HOME Page*/
+
+.homePage {
+	background-color: #272F5A;
+	color: #ffffff;
+	padding: 20px;
+	text-align: center;
+}
+
+
+
+/* BUILD Page  */
+
+.buildTitle {	/* for the title of the build page*/
+	background-color: #545578;
+	color: #ffffff;
+	padding: 20px;
+	text-align: center;
+}
+
+.buildTable {
+	height: 100%;
+	background-color: #edf0f5;
+}
+
+.buildTableHead { /* head of the table*/
+	font-size: 22px;
+}
+
+.buildTableBody { /* body of the table*/
+	font-size: 14px;
+}
+
+
+
+/* CPU Page*/
+
+.cpuTitle {
+	background-color: #272F5A;
+	color: #ffffff;
+	padding: 20px;
+	text-align: center;
+}
+
+.cpuTable {
+	height: 100%;
+	background-color: #edf0f5;
+}
+
+.cpuTableHead {
+	font-size: 22px;
+}
+
+.cpuTableBody {
+	font-size: 14px;
+}
+
+
+
+/* CPU Cooler Page*/
+
+.coolerTitle {
+	background-color: #272F5A;
+	color: #ffffff;
+	padding: 20px;
+	text-align: center;
+}
+
+.coolerTable {
+	height: 100%;
+	background-color: #edf0f5;
+}
+
+.coolerTableHead {
+	font-size: 22px;
+}
+
+.coolerTableBody {
+	font-size: 14px;
+}
+
+
+
+/* MOTHERBOARD Page*/
+
+.mboardTitle {
+	background-color: #272F5A;
+	color: #ffffff;
+	padding: 20px;
+	text-align: center;
+}
+
+.mboardTable {
+	height: 100%;
+	background-color: #edf0f5;
+}
+
+.mboardTableHead {
+	font-size: 22px;
+}
+
+.mboardTableBody {
+	font-size: 14px;
+}
+
+
+
+/* MEMORY Page*/
+
+.memoryTitle {
+	background-color: #272F5A;
+	color: #ffffff;
+	padding: 20px;
+	text-align: center;
+}
+
+.memoryTable {
+	height: 100%;
+	background-color: #edf0f5;
+}
+
+.memoryTableHead {
+	font-size: 22px;
+}
+
+.memoryTableBody {
+	font-size: 14px;
+}
+
+
+
+/* VIDEO CARD Page*/
+
+.videoCardTitle {
+	background-color: #272F5A;
+	color: #ffffff;
+	padding: 20px;
+	text-align: center;
+}
+
+.videoCardTable {
+	height: 100%;
+	background-color: #edf0f5;
+}
+
+.videoCardTableHead {
+	font-size: 22px;
+}
+
+.videoCardTableBody {
+	font-size: 14px;
+}
+
+
+
+/* STORAGE Page*/
+
+.storageTitle {
+	background-color: #272F5A;
+	color: #ffffff;
+	padding: 20px;
+	text-align: center;
+}
+
+.storageTable {
+	height: 100%;
+	background-color: #edf0f5;
+}
+
+.storageTableHead {
+	font-size: 22px;
+}
+
+.storageTableBody {
+	font-size: 14px;
+}
+
+
+
+/* CASE Page*/
+
+.caseTitle {
+	background-color: #272F5A;
+	color: #ffffff;
+	padding: 20px;
+	text-align: center;
+}
+
+.caseTable {
+	height: 100%;
+	background-color: #edf0f5;
+}
+
+.caseTableHead {
+	font-size: 22px;
+}
+
+.caseTableBody {
+	font-size: 14px;
+}
+
+
+
+/* POWER SUPPLY Page*/
+
+.powerSupplyTitle {
+	background-color: #272F5A;
+	color: #ffffff;
+	padding: 20px;
+	text-align: center;
+}
+
+.powerSupplyTable {
+	height: 100%;
+	background-color: #edf0f5;
+}
+
+.powerSupplyTableHead {
+	font-size: 22px;
+}
+
+.powerSupplyTableBody {
+	font-size: 14px;
+}
+
+
+
+/* FOOTER */
+
+.footer {
+	background-color: #343a40;
+	padding: 120px;
+	margin-bottom: 0;
+}
