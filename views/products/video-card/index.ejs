@@ -1,19 +1,21 @@
 <%- include("../../partials/header.ejs"); %>
 
-<div class="container">
-    <h1>Products page</h1>
-    
-    <table class="table">
-        <thead>
+<div class="videoCardTitle">
+    <h1>Choose A Video Card</h1>
+</div>
+
+<div class="videoCardTable">
+    <table class="container table table-hover">
+        <thead class="videoCardTableHead">
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Memory</th>
             <th scope="col">Memory Type</th>
             <th scope="col">Price</th>
-            <th scope="col"></th>
+            <th scope="col">&nbsp</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="videoCardTableBody">
             <% videoCardItems.forEach(function(videoCard){ %>
                 <tr>
                     <td><a href="/products/video-card/<%= videoCard._id %>"><%= videoCard.brand %> <%= videoCard.name %></a></td>

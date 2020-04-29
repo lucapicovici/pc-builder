@@ -1,19 +1,21 @@
 <%- include("../../partials/header.ejs"); %>
 
-<div class="container">
-    <h1>Products page</h1>
-    
-    <table class="table">
-        <thead>
+<div class="coolerTitle">
+    <h1>Choose A CPU Cooler</h1>
+</div>
+
+<div class="coolerTable">
+    <table class="container table table-hover">
+        <thead class="coolerTableHead">
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Type</th>
             <th scope="col">Fan Size</th>
             <th scope="col">Price</th>
-            <th scope="col"></th>
+            <th scope="col">&nbsp</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="coolerTableBody">
             <% cpuCoolerItems.forEach(function(cpuCooler){ %>
                 <tr>
                     <td><a href="/products/cpu-cooler/<%= cpuCooler._id %>"><%= cpuCooler.brand %> <%= cpuCooler.name %></a></td>

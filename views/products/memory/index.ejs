@@ -1,20 +1,22 @@
 <%- include("../../partials/header.ejs"); %>
 
-<div class="container">
-    <h1>Products page</h1>
-    
-    <table class="table">
-        <thead>
+<div class="memoryTitle">
+    <h1>Choose Memory</h1>
+</div>
+
+<div class="memoryTable">
+    <table class="container table table-hover">
+        <thead class="memoryTableHead">
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Capacity</th>
             <th scope="col">Frequency</th>
             <th scope="col">Type</th>
             <th scope="col">Price</th>
-            <th scope="col"></th>
+            <th scope="col">&nbsp</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="memoryTableBody">
             <% memoryItems.forEach(function(memory){ %>
                 <tr>
                     <td><a href="/products/memory/<%= memory._id %>"><%= memory.brand %> <%= memory.name %></a></td>
