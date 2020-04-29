@@ -1,0 +1,27 @@
+<%- include("../../partials/header.ejs"); %>
+
+<div class="container">
+    <h2>My Orders</h2>
+    
+    <% orders.forEach(function(order){ %>
+        <% var d = order._id.getTimestamp(); %>
+        <div class="card mb-5">
+            <div class="card-header">
+                <a href="/user/orders/<%= order._id %>">Order no. <%= order._id %></a>
+                <a class="btn btn-sm btn-info float-right" href="/user/orders/<%= order._id %>">Details</a>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        Order placed on <%= d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate() + " " + d.getHours()+":"+d.getMinutes()+":"+d.getSeconds() %>
+                    </li>
+                    <p class="card-text" id="totalPrice" style="padding-left: 20px;">
+                        <strong>Total: $<%= order.cart.totalPrice %></strong>
+                    </p>
+                </ul>
+            </div>
+        </div>
+    <% }); %>
+</div>
+
+<%- include("../../partials/footer.ejs"); %>

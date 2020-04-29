@@ -33,6 +33,7 @@ app.use(function(req, res, next){
     req.session.cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
     res.locals.user = req.user;
     res.locals.isLoggedIn = req.isAuthenticated();
+    res.locals.session = req.session;
     next();
 });
 

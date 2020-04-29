@@ -2,6 +2,7 @@
 
 main {
 	height: 900px;
+	background-color: #edf0f5;
 }
 
 
@@ -27,15 +28,10 @@ main {
 /* BUILD Page  */
 
 .buildTitle {	/* for the title of the build page*/
-	background-color: #545578;
+	background-color: #272F5A;
 	color: #ffffff;
 	padding: 20px;
 	text-align: center;
-}
-
-.buildTable {
-	height: 100%;
-	background-color: #edf0f5;
 }
 
 .buildTableHead { /* head of the table*/

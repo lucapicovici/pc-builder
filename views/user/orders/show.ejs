@@ -1,0 +1,71 @@
+<%- include("../../partials/header.ejs"); %>
+
+<div class="container">
+    <h2>Order no. <%= order._id %></h2>
+    
+    <% var d = order._id.getTimestamp(); var cart = order.cart; %>
+    <div class="card mb-5">
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <% if (cart.items["cpu"]) { %>
+                    <% var cpu = cart.items["cpu"].item; %>
+                    <li class="list-group-item">
+                        <strong>CPU:</strong> <%= cpu.brand + " " + cpu.name + " " + cpu.frequency + "GHz " + cpu.cores + "-Core Processor" %>
+                    </li>
+                <% } %>
+                <% if (cart.items["cpu-cooler"]) { %>
+                    <% var cpuCooler = cart.items["cpu-cooler"].item; %>
+                    <li class="list-group-item">
+                        <strong>CPU Cooler:</strong> <%= cpuCooler.brand + " " + cpuCooler.name + " " + cpuCooler.type + " " + cpuCooler.fanSize + "mm CPU Cooler" %>
+                    </li>
+                <% } %>
+                <% if (cart.items["motherboard"]) { %>
+                    <% var motherboard = cart.items["motherboard"].item; %>
+                    <li class="list-group-item">
+                        <strong>Motherboard:</strong> <%= motherboard.brand + " " + motherboard.name + ", socket " +  motherboard.socket + " Motherboard" %>
+                    </li>
+                <% } %>
+                <% if (cart.items["memory"]) { %>
+                    <% var memory = cart.items["memory"].item; %>
+                    <li class="list-group-item">
+                        <strong>Memory:</strong> <%= memory.brand + " " + memory.name + " " + memory.capacity + "GB " + memory.type + " " + memory.frequency + "MHz Memory" %>
+                    </li>
+                <% } %>
+                <% if (cart.items["storage"]) { %>
+                    <% var storage = cart.items["storage"].item; %>
+                    <li class="list-group-item">
+                        <strong>Storage:</strong> <%= storage.brand + " " + storage.name + " " + storage.type + " " + storage.capacity + "GB Storage" %>
+                    </li>
+                <% } %>
+                <% if (cart.items["video-card"]) { %>
+                    <% var videoCard = cart.items["video-card"].item; %>
+                    <li class="list-group-item">
+                        <strong>Video Card:</strong> <%= videoCard.brand + " " + videoCard.name + " " + videoCard.memory + "MB " + videoCard.memoryType + " Video Card" %>
+                    </li>
+                <% } %>
+                <% if (cart.items["case"]) { %>
+                    <% var caseItem = cart.items["case"].item; %>
+                    <li class="list-group-item">
+                        <strong>Case:</strong> <%= caseItem.brand + " " + caseItem.name + " " + caseItem.motherboardSupport + " Case" %>
+                    </li>
+                <% } %>
+                <% if (cart.items["power-supply"]) { %>
+                    <% var psu = cart.items["power-supply"].item; %>
+                    <li class="list-group-item">
+                        <strong>Power Supply:</strong> <%= psu.brand + " " + psu.name + " " + psu.tdp + "W Power Supply" %>
+                    </li>
+                <% } %>
+                <li class="list-group-item">
+                    <em>
+                        Order placed on <%= d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate() + " " + d.getHours()+":"+d.getMinutes()+":"+d.getSeconds() %>
+                    </em>
+                </li>
+                <p class="card-text" id="totalPrice" style="padding-left: 20px;">
+                    <strong>Total: $<%= order.cart.totalPrice %></strong>
+                </p>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<%- include("../../partials/footer.ejs"); %>
