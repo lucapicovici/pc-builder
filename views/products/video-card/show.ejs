@@ -1,18 +1,61 @@
 <%- include("../../partials/header.ejs"); %>
 
-<ul class="list-group">
-    <li class="list-group-item"><%= videoCard.brand %></li>
-    <li class="list-group-item"><%= videoCard.name %></li>
-    <li class="list-group-item"><%= videoCard.memory %> MB</li>
-    <li class="list-group-item"><%= videoCard.memoryType %></li>
-    <li class="list-group-item"><%= videoCard.coreFrequency %> MHz</li>
-    <li class="list-group-item"><%= videoCard.memoryFrequency %> MHz</li>
-    <li class="list-group-item"><%= videoCard.sli %></li>
-    <li class="list-group-item"><%= videoCard.crossfire %></li>
-    <li class="list-group-item"><%= videoCard.tdp %> W</li>
-    <li class="list-group-item">$<%= videoCard.price %></li>
-</ul>
+<div class="videoCardTable">
+    <table class="container table table-hover">
+        <thead class="videoCardTableHead">
+          <tr>
+            <th scope="col">&nbsp</th>
+            <th scope="col">&nbsp</th>
+          </tr>
+        </thead>
+        <tbody class="videoCardTableBody">
+            <th>Brand</th>
+            <th><%= videoCard.brand %></th>
+        </tbody>
+        <tbody class="videoCardTableBody">
+            <th>Name</th>
+            <th><%= videoCard.name %></th>
+        </tbody>
+        <tbody class="videoCardTableBody">
+            <th>Memory</th>
+            <th><%= videoCard.memory %> MB</th>
+        </tbody>
+        <tbody class="videoCardTableBody">
+            <th>Memory type</th>
+            <th><%= videoCard.memoryType %></th>
+        </tbody>
+        <tbody class="videoCardTableBody">
+            <th>Core frequency</th>
+            <th><%= videoCard.coreFrequency %> MHz</th>
+        </tbody>
+        <tbody class="videoCardTableBody">
+            <th>Memory frequency</th>
+            <th><%= videoCard.memoryFrequency %></th>
+        </tbody>
+        <tbody class="videoCardTableBody">
+            <th>SLI</th>
+            <th><%= videoCard.sli %></th>
+        </tbody>
+        <tbody class="videoCardTableBody">
+            <th>Crossfire</th>
+            <th><%= videoCard.crossfire %></th>
+        </tbody>
 
-<a class="btn btn-primary btn-sm" href="/products/add-to-cart/video-card/<%= videoCard._id %>">Add</a>
+
+        <tbody class="videoCardTableBody">
+            <th>TDP</th>
+            <th><%= videoCard.tdp %> W</th>
+        </tbody>
+        <tbody class="videoCardTableBody">
+            <th>Price</th>
+            <th>$<%= videoCard.price %></th>
+        </tbody>
+
+    </table>
+    <div class="container text-center">
+        <a class="btn btn-lg btn-primary btn-block" href="/products/add-to-cart/video-card/<%= videoCard._id %>">Add</a>
+    </div>
+</div>
+
 
 <%- include("../../partials/footer.ejs"); %>

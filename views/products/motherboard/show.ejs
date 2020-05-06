@@ -1,20 +1,66 @@
 <%- include("../../partials/header.ejs"); %>
 
-<ul class="list-group">
-    <li class="list-group-item"><%= motherboard.brand %></li>
-    <li class="list-group-item"><%= motherboard.name %></li>
-    <li class="list-group-item"><%= motherboard.form %></li>
-    <li class="list-group-item"><%= motherboard.socket %></li>
-    <li class="list-group-item"><%= motherboard.memorySlots %></li>
-    <li class="list-group-item"><%= motherboard.maxMemory %> GB</li>
-    <li class="list-group-item"><%= motherboard.maxMemoryFrequency %> MHz</li>
-    <li class="list-group-item"><%= motherboard.memoryType %></li>
-    <li class="list-group-item"><%= motherboard.sliSupport %></li>
-    <li class="list-group-item"><%= motherboard.crossfireSupport %></li>
-    <li class="list-group-item"><%= motherboard.tdp %> W</li>
-    <li class="list-group-item">$<%= motherboard.price %></li>
-</ul>
+<div class="mboardTable">
+    <table class="container table table-hover">
+        <thead class="mboardTableHead">
+          <tr>
+            <th scope="col">&nbsp</th>
+            <th scope="col">&nbsp</th>
+          </tr>
+        </thead>
+        <tbody class="mboardTableBody">
+            <th>Brand</th>
+            <th><%= motherboard.brand %></th>
+        </tbody>
+        <tbody class="mboardTableBody">
+            <th>Name</th>
+            <th><%= motherboard.name %></th>
+        </tbody>
+        <tbody class="mboardTableBody">
+            <th>Form</th>
+            <th><%= motherboard.form %></th>
+        </tbody>
+        <tbody class="mboardTableBody">
+            <th>Socket</th>
+            <th><%= motherboard.socket %></th>
+        </tbody>
+        <tbody class="mboardTableBody">
+            <th>Memory slots</th>
+            <th><%= motherboard.memorySlots %></th>
+        </tbody>
+        <tbody class="mboardTableBody">
+            <th>Max memory</th>
+            <th><%= motherboard.maxMemory %> GB</th>
+        </tbody>
+        <tbody class="mboardTableBody">
+            <th>Max memory frequency</th>
+            <th><%= motherboard.maxMemoryFrequency %> MHz</th>
+        </tbody>
+        <tbody class="mboardTableBody">
+            <th>Memory type</th>
+            <th><%= motherboard.memoryType %></th>
+        </tbody>
+        <tbody class="mboardTableBody">
+            <th>SLI support</th>
+            <th><%= motherboard.sliSupport %></th>
+        </tbody>
+        <tbody class="mboardTableBody">
+            <th>Crossfire support</th>
+            <th><%= motherboard.crossfireSupport %></th>
+        </tbody>
+        <tbody class="mboardTableBody">
+            <th>TDP</th>
+            <th><%= motherboard.tdp %> W</th>
+        </tbody>
+        <tbody class="mboardTableBody">
+            <th>Price</th>
+            <th>$<%= motherboard.price %></th>
+        </tbody>
+    </table>
+    <div class="container text-center">
+        <a class="btn btn-lg btn-primary btn-block" href="/products/add-to-cart/motherboard/<%= motherboard._id %>">Add</a>
+    </div>
+</div>
 
-<a class="btn btn-primary btn-sm" href="/products/add-to-cart/motherboard/<%= motherboard._id %>">Add</a>
 
 <%- include("../../partials/footer.ejs"); %>

@@ -1,14 +1,43 @@
 <%- include("../../partials/header.ejs"); %>
 
-<ul class="list-group">
-    <li class="list-group-item"><%= powerSupply.brand %></li>
-    <li class="list-group-item"><%= powerSupply.name %></li>
-    <li class="list-group-item"><%= powerSupply.rating %></li>
-    <li class="list-group-item"><%= powerSupply.fanSize %> mm</li>
-    <li class="list-group-item"><%= powerSupply.tdp %> W</li>
-    <li class="list-group-item">$<%= powerSupply.price %></li>
-</ul>
+<div class="powerSupplyTable">
+    <table class="container table table-hover">
+        <thead class="powerSupplyTableHead">
+          <tr>
+            <th scope="col">&nbsp</th>
+            <th scope="col">&nbsp</th>
+          </tr>
+        </thead>
+        <tbody class="powerSupplyTableBody">
+            <th>Brand</th>
+            <th><%= powerSupply.brand %></th>
+        </tbody>
+        <tbody class="powerSupplyTableBody">
+            <th>Name</th>
+            <th><%= powerSupply.name %></th>
+        </tbody>
+        <tbody class="powerSupplyTableBody">
+            <th>Rating</th>
+            <th><%= powerSupply.rating %></th>
+        </tbody>
+        <tbody class="powerSupplyTableBody">
+            <th>Fan size</th>
+            <th><%= powerSupply.fanSize %> mm</th>
+        </tbody>
+        <tbody class="powerSupplyTableBody">
+            <th>TDP</th>
+            <th><%= powerSupply.tdp %> W</th>
+        </tbody>
+        <tbody class="powerSupplyTableBody">
+            <th>Price</th>
+            <th>$<%= powerSupply.price %></th>
+        </tbody>
 
-<a class="btn btn-primary btn-sm" href="/products/add-to-cart/power-supply/<%= powerSupply._id %>">Add</a>
+    </table>
+    <div class="container text-center">
+		<a class="btn btn-lg btn-primary btn-block" href="/products/add-to-cart/power-supply/<%= powerSupply._id %>">Add</a>
+	</div>
+</div>
+
 
 <%- include("../../partials/footer.ejs"); %>

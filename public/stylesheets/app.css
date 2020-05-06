@@ -1,17 +1,19 @@
+
  /* DEFAULT*/
 
 main {
-	height: 900px;
-	background-color: #edf0f5;
+	height: 1200px;
+	background-color: #f5f5f5;
 }
 
 
-/* ALL PAGES*/
-
-#remove:hover {  /* for button Delete*/
-  color: red;
-  text-decoration: none;
+.authentication {
+  
+  height: 100%;
+  padding-top: 100px;
 }
+
+
 
 
 /* HOME Page*/
@@ -23,6 +25,54 @@ main {
 	text-align: center;
 }
 
+.home-main{
+	background: #5812c5;
+	color:#fff;
+	padding: 13%;
+	text-align: center;
+}
+.blinker{
+	animation: blinker 1.5s linear infinite;
+}
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
+.home-main button{
+	background: #fff;
+	color: #5812c5;
+	border-radius: 0;
+	font-weight: 700;
+	width: 16%;
+	height: 50px;
+	top: 4%;
+	margin-top: 3%;
+}
+.home-main button:hover{
+	transition: 1s ease;
+	color:#5812c5;
+	width: 19%;
+}
+.content1-left{
+	padding:9%;
+}
+.content1-right{
+	padding:9%;
+	background:#e4e4e4;
+}
+.home-content2{
+	background: #adb5bd;
+	padding: 1.4%;
+	text-align: center;	
+}
+.home-content2 p{
+	font-size: 18px;
+	line-height: 50px;
+}
+.home-content2 p span{
+	font-weight: 500;
+}
 
 
 /* BUILD Page  */
@@ -40,6 +90,11 @@ main {
 
 .buildTableBody { /* body of the table*/
 	font-size: 14px;
+}
+
+#remove:hover {  /* for button Delete*/
+  color: red;
+  text-decoration: none;
 }
 
 
@@ -242,4 +297,51 @@ main {
 	background-color: #343a40;
 	padding: 120px;
 	margin-bottom: 0;
+}
+
+
+
+
+
+/* REGISTER and LOGIN */
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
+/* PROFILE */
+
+.profileTitle {
+	background-color: #b3251b;
+	color: #ffffff;
+	padding: 20px;
+	text-align: center;
 }

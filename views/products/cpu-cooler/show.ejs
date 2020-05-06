@@ -1,14 +1,43 @@
 <%- include("../../partials/header.ejs"); %>
 
-<ul class="list-group">
-    <li class="list-group-item"><%= cpuCooler.brand %></li>
-    <li class="list-group-item"><%= cpuCooler.name %></li>
-    <li class="list-group-item"><%= cpuCooler.type %></li>
-    <li class="list-group-item"><%= cpuCooler.fanSize %> mm</li>
-    <li class="list-group-item"><%= cpuCooler.tdp %> W</li>
-    <li class="list-group-item">$<%= cpuCooler.price %></li>
-</ul>
+<div class="coolerTable">
+    <table class="container table table-hover">
+        <thead class="coolerTableHead">
+          <tr>
+            <th scope="col">&nbsp</th>
+            <th scope="col">&nbsp</th>
+          </tr>
+        </thead>
+        <tbody class="coolerTableBody">
+            <th>Brand</th>
+            <th><%= cpuCooler.brand %></th>
+        </tbody>
+        <tbody class="coolerTableBody">
+            <th>Name</th>
+            <th><%= cpuCooler.name %></th>
+        </tbody>
+        <tbody class="coolerTableBody">
+            <th>Type</th>
+            <th><%= cpuCooler.type %></th>
+        </tbody>
+        <tbody class="coolerTableBody">
+            <th>Fan size</th>
+            <th><%= cpuCooler.fanSize %> mm</th>
+        </tbody>
+        <tbody class="coolerTableBody">
+            <th>TDP</th>
+            <th><%= cpuCooler.tdp %> W</th>
+        </tbody>
+        <tbody class="coolerTableBody">
+            <th>Price</th>
+            <th>$<%= cpuCooler.price %></th>
+        </tbody>
 
-<a class="btn btn-primary btn-sm" href="/products/add-to-cart/cpu-cooler/<%= cpuCooler._id %>">Add</a>
+    </table>
+    <div class="container text-center">
+		<a class="btn btn-lg btn-primary btn-block" href="/products/add-to-cart/cpu-cooler/<%= cpuCooler._id %>">Add</a>
+	</div>
+</div>
+
 
 <%- include("../../partials/footer.ejs"); %>

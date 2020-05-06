@@ -1,15 +1,46 @@
 <%- include("../../partials/header.ejs"); %>
 
-<ul class="list-group">
-    <li class="list-group-item"><%= memory.brand %></li>
-    <li class="list-group-item"><%= memory.name %></li>
-    <li class="list-group-item"><%= memory.capacity %> GB</li>
-    <li class="list-group-item"><%= memory.frequency %> MHz</li>
-    <li class="list-group-item"><%= memory.type %></li>
-    <li class="list-group-item"><%= memory.tdp %> W</li>
-    <li class="list-group-item">$<%= memory.price %></li>
-</ul>
+<div class="memoryTable">
+    <table class="container table table-hover">
+        <thead class="memoryTableHead">
+          <tr>
+            <th scope="col">&nbsp</th>
+            <th scope="col">&nbsp</th>
+          </tr>
+        </thead>
+        <tbody class="memoryTableBody">
+            <th>Brand</th>
+            <th><%= memory.brand %></th>
+        </tbody>
+        <tbody class="memoryTableBody">
+            <th>Name</th>
+            <th><%= memory.name %></th>
+        </tbody>
+        <tbody class="memoryTableBody">
+            <th>Capacity</th>
+            <th><%= memory.capacity %> GB</th>
+        </tbody>
+        <tbody class="memoryTableBody">
+            <th>Frequency</th>
+            <th><%= memory.frequency %> GHz</th>
+        </tbody>
+        <tbody class="memoryTableBody">
+            <th>Type</th>
+            <th><%= memory.type %></th>
+        </tbody>
+        <tbody class="memoryTableBody">
+            <th>TDP</th>
+            <th><%= memory.tdp %> W</th>
+        </tbody>
+        <tbody class="memoryTableBody">
+            <th>Price</th>
+            <th>$<%= memory.price %></th>
+        </tbody>
 
-<a class="btn btn-primary btn-sm" href="/products/add-to-cart/memory/<%= memory._id %>">Add</a>
+    </table>
+    <div class="container text-center">
+		<a class="btn btn-lg btn-primary btn-block" href="/products/add-to-cart/memory/<%= memory._id %>">Add</a>
+	</div>
+</div>
 
 <%- include("../../partials/footer.ejs"); %>
