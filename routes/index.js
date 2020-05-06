@@ -5,8 +5,7 @@ var express  = require("express"),
 var Order = require("../models/order.js");
 
 router.get("/", function(req, res){
-    res.redirect("/build");
-    // res.render("index");
+    res.render("index");
 });
 
 router.get("/build", function(req, res){
@@ -31,13 +30,18 @@ router.post("/build", isLoggedIn, function(req, res){
         } else {
             req.flash("success", "Order has been placed successfully.");
             req.session.cart = null;
-            res.redirect("/");
+            res.redirect("/build");
         }
     });
 });
 
 router.get("/user/profile", isLoggedIn, function(req, res){
-    res.render("user/profile");
+    Order.countDocuments({user: req.user}, function(err, count){
+        if (err) {
+            return res.write("Error!");
+        }
+        res.render("user/profile", {orderCount: count});
+    });
 });
 
 router.get("/user/orders", isLoggedIn, function(req, res){
