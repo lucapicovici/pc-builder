@@ -1,6 +1,6 @@
 <%- include("../partials/header.ejs"); %>
 
-<div class="container text-center">
+<div class="authentication container text-center">
     <h1>Login</h1>
     
     <% if (errMessages.length > 0) { %>
@@ -14,10 +14,10 @@
     <div class="row justify-content-md-center">
         <form class="form-signin" action="/user/login" method="POST">
             
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" name="email" id="email" placeholder="Email address">
+            <label for="email" class="sr-only">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Email address" required autofocus>
         
-            <label for="password">Password</label>
+            <label for="password" class="sr-only">Password</label>
             <input type="password" class="form-control" name="password" id="password" placeholder="Password">
             
             <div class="checkbox mb-3">
@@ -25,7 +25,7 @@
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button class="btn btn-primary">Log in</button>
+            <button class="btn btn-lg btn-primary btn-block">Log in</button>
         </form>
     </div>
 

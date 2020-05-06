@@ -1,16 +1,52 @@
 <%- include("../../partials/header.ejs"); %>
 
-<ul class="list-group">
-    <li class="list-group-item"><%= cpu.brand %></li>
-    <li class="list-group-item"><%= cpu.name %></li>
-    <li class="list-group-item"><%= cpu.socket %></li>
-    <li class="list-group-item"><%= cpu.frequency %> GHz</li>
-    <li class="list-group-item"><%= cpu.cores %></li>
-    <li class="list-group-item"><%= cpu.cache %> MB</li>
-    <li class="list-group-item"><%= cpu.tdp %> W</li>
-    <li class="list-group-item">$<%= cpu.price %></li>
-</ul>
 
-<a class="btn btn-primary btn-sm" href="/products/add-to-cart/cpu/<%= cpu._id %>">Add</a>
+<div class="cpuTable">
+    <table class="container table table-hover">
+        <thead class="cpuTableHead">
+          <tr>
+            <th scope="col">&nbsp</th>
+            <th scope="col">&nbsp</th>
+          </tr>
+        </thead>
+        <tbody class="cpuTableBody">
+            <th>Brand</th>
+            <th><%= cpu.brand %></th>
+        </tbody>
+        <tbody class="cpuTableBody">
+            <th>Name</th>
+            <th><%= cpu.name %></th>
+        </tbody>
+        <tbody class="cpuTableBody">
+            <th>Socket</th>
+            <th><%= cpu.socket %></th>
+        </tbody>
+        <tbody class="cpuTableBody">
+            <th>Frequency</th>
+            <th><%= cpu.frequency %> GHz</th>
+        </tbody>
+        <tbody class="cpuTableBody">
+            <th>Cores</th>
+            <th><%= cpu.cores %></th>
+        </tbody>
+        <tbody class="cpuTableBody">
+            <th>Cache</th>
+            <th><%= cpu.cache %> MB</th>
+        </tbody>
+        <tbody class="cpuTableBody">
+            <th>TDP</th>
+            <th><%= cpu.tdp %> W</th>
+        </tbody>
+        <tbody class="cpuTableBody">
+            <th>Price</th>
+            <th>$<%= cpu.price %></th>
+        </tbody>
+
+    </table>
+    <div class="container text-center">
+		<a class="btn btn-lg btn-primary btn-block" href="/products/add-to-cart/cpu/<%= cpu._id %>">Add</a>
+	</div>
+</div>
+
 
 <%- include("../../partials/footer.ejs"); %>

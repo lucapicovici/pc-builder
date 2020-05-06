@@ -1,16 +1,52 @@
 <%- include("../../partials/header.ejs"); %>
 
-<ul class="list-group">
-    <li class="list-group-item"><%= caseItem.brand %></li>
-    <li class="list-group-item"><%= caseItem.name %></li>
-    <li class="list-group-item"><%= caseItem.form %></li>
-    <li class="list-group-item"><%= caseItem.motherboardSupport %></li>
-    <li class="list-group-item"><%= caseItem.maxGpuLength %> mm</li>
-    <li class="list-group-item"><%= caseItem.maxCoolerHeight %> mm</li>
-    <li class="list-group-item"><%= caseItem.maxPsuLength %> mm</li>
-    <li class="list-group-item">$<%= caseItem.price %></li>
-</ul>
 
-<a class="btn btn-primary btn-sm" href="/products/add-to-cart/case/<%= caseItem._id %>">Add</a>
+<div class="caseTable">
+    <table class="container table table-hover">
+        <thead class="caseTableHead">
+          <tr>
+            <th scope="col">&nbsp</th>
+            <th scope="col">&nbsp</th>
+          </tr>
+        </thead>
+        <tbody class="caseTableBody">
+            <th>Brand</th>
+            <th><%= caseItem.brand %></th>
+        </tbody>
+        <tbody class="caseTableBody">
+            <th>Name</th>
+            <th><%= caseItem.name %></th>
+        </tbody>
+        <tbody class="caseTableBody">
+            <th>Form</th>
+            <th><%= caseItem.form %></th>
+        </tbody>
+        <tbody class="caseTableBody">
+            <th>Mother Board Support</th>
+            <th><%= caseItem.motherboardSupport %></th>
+        </tbody>
+        <tbody class="caseTableBody">
+            <th>Max GPU</th>
+            <th><%= caseItem.maxGpuLength %> mm</th>
+        </tbody>
+        <tbody class="caseTableBody">
+            <th>Max Cooler Height</th>
+            <th><%= caseItem.maxCoolerHeight %> mm</th>
+        </tbody>
+        <tbody class="caseTableBody">
+            <th>Max PSU length</th>
+            <th><%= caseItem.maxPsuLength %> mm</th>
+        </tbody>
+        <tbody class="caseTableBody">
+            <th>Price</th>
+            <th>$<%= caseItem.price %></th>
+        </tbody>
+
+    </table>
+    <div class="container text-center">
+		<a class="btn btn-lg btn-primary btn-block" href="/products/add-to-cart/case/<%= caseItem._id %>">Add</a>
+	</div>
+</div>
+
 
 <%- include("../../partials/footer.ejs"); %>
