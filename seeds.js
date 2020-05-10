@@ -50,6 +50,36 @@ var cpuData = [
         price: 303
     },
     {
+        brand: "Intel",
+        name: "Core i7-9700k",
+        socket: "1151",
+        frequency: 3.6,
+        cores: 8,
+        cache: 12,
+        tdp: 95,
+        price: 380
+    },
+    {
+        brand: "Intel",
+        name: "Core i9-9900k",
+        socket: "1151",
+        frequency: 8,
+        cores: 8,
+        cache: 16,
+        tdp: 95,
+        price: 492
+    },
+    {
+        brand: "AMD",
+        name: "Ryzen 3 3200G",
+        socket: "AM4",
+        frequency: 3.6,
+        cores: 4,
+        cache: 6,
+        tdp: 65,
+        price: 79
+    },
+    {
         brand: "AMD",
         name: "Ryzen 5 2600X",
         socket: "AM4",
@@ -57,6 +87,16 @@ var cpuData = [
         cores: 6,
         cache: 16,
         tdp: 95,
+        price: 165
+    },
+    {
+        brand: "AMD",
+        name: "Ryzen 5 3600",
+        socket: "AM4",
+        frequency: 3.6,
+        cores: 6,
+        cache: 32,
+        tdp: 65,
         price: 229
     },
     {
@@ -93,12 +133,36 @@ var cpuData = [
 
 var cpuCoolerData = [
     {
+        brand: "Cooler Master",
+        name: "Hyper H412R",
+        type: "Air",
+        fanSize: 92,
+        tdp: 5,
+        price: 22
+    },
+    {
         brand: "Arctic",
         name: "Freezer 50 TR",
+        type: "Air",
+        fanSize: 135,
+        tdp: 5,
+        price: 75
+    },
+    {
+        brand: "Be Quiet",
+        name: "Dark Rock",
         type: "Air",
         fanSize: 120,
         tdp: 5,
         price: 70
+    },
+    {
+        brand: "Cooler Master",
+        name: "MasterLiquid 240R",
+        type: "Liquid",
+        fanSize: 240,
+        tdp: 10,
+        price: 99
     },
     {
         brand: "Cooler Master",
@@ -155,7 +219,7 @@ var memoryData = [
     },
     {
         brand: "HyperX",
-        name: "Fury",    
+        name: "Fury",
         capacity: 8,
         frequency: 2400,
         type: "DDR4",
@@ -188,6 +252,15 @@ var memoryData = [
         type: "DDR3",
         tdp: 5,
         price: 55
+    },
+    {
+        brand: "Corsair",
+        name: "Vengeance",
+        capacity: 16,
+        frequency: 2400,
+        type: "DDR4",
+        tdp: 5,
+        price: 175
     }
 ];
 
@@ -233,6 +306,20 @@ var motherboardData = [
         crossfireSupport: 2,
         tdp: 50,
         price: 300
+    },
+    {
+        brand: "MSI",
+        name: "MPG X570",
+        form: "ATX",
+        socket: "AM4",
+        memorySlots: 4,
+        maxMemory: 64,
+        maxMemoryFrequency: 3866,
+        memoryType: "DDR4",
+        sliSupport: 2,
+        crossfireSupport: 2,
+        tdp: 50,
+        price: 250
     }
 ];
 
@@ -333,6 +420,22 @@ var psuData = [
         price: 129
     },
     {
+        brand: "ADX",
+        name: "W750",
+        rating: "80%",
+        fanSize: 140,
+        tdp: 750,
+        price: 69
+    },
+    {
+        brand: "PHANTEKS",
+        name: "Revolts Pro",
+        rating: "80%",
+        fanSize: 135,
+        tdp: 1000,
+        price: 149
+    },
+    {
         brand: "Corsair",
         name: "Model X",
         rating: "90%",
@@ -364,6 +467,28 @@ var storageData = [
         spinSpeed: 5400,
         tdp: 25,
         price: 129
+    },
+    {
+        brand: "Samsung",
+        name: "Ultra 3D",
+        type: "SSD",
+        capacity: 1000,
+        size: 150,
+        cache: 0,
+        spinSpeed: 0,
+        tdp: 25,
+        price: 165
+    },
+    {
+        brand: "Toshiba",
+        name: "N300",
+        type: "HDD",
+        capacity: 8000,
+        size: 150,
+        cache: 35,
+        spinSpeed: 7200,
+        tdp: 25,
+        price: 308
     }
 ];
 
